@@ -15,7 +15,7 @@ Esc: Escape from full-screen, or toggle overview
 <head>
     <meta charset="utf-8">
 
-    <title>CODELAB: Hands-on Performance - Eine Einführung in Web-Performance</title>
+    <title>Hands-on Web Performance Analysis</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -42,6 +42,15 @@ Esc: Escape from full-screen, or toggle overview
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
+        /*
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+            font-family: "Mukta-Regular";
+        }
+*/
+        .reveal {
+            font-family: "Mukta-Extralight";
+        }
+
         .reveal i.fa {
             font: normal normal normal 14px/1 FontAwesome;
         }
@@ -108,23 +117,14 @@ Esc: Escape from full-screen, or toggle overview
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
         <section>
-            <h2>CODELAB: Hands-on Performance</h2>
-            <h5>Eine Einführung in Web-Performance</h5>
-
-            <p>
-                <a href="mailto:frank.thelen@telefonica.com">Frank Thelen</a> |
-                <a href="http://www.o2online.de">Telefónica O<sub>2</sub></a>
-            </p>
+            <h2>Hands-on Web Performance Analysis</h2>
+            <h5>with Chrome Dev Tools, Google PageSpeed Insights and WebPagetest</h5>
 
             <p>
                 <a href="mailto:jan.weinschenker@holisticon.de">Jan Weinschenker</a> |
                 <a href="http://www.holisticon.de">http://www.holisticon.de</a>
             </p>
 
-            <p>
-                <a href="mailto:oliver.ochs@holisticon.de">Oliver Ochs</a> |
-                <a href="http://www.holisticon.de">http://www.holisticon.de</a>
-            </p>
         </section>
         <section>
             <img src="assets/meetup.png" width="60%" style="border:none; background:none; -webkit-box-shadow: none;">
@@ -133,17 +133,17 @@ Esc: Escape from full-screen, or toggle overview
             <section class="agenda">
                 <h2>Agenda</h2>
                 <ul>
-                    <li class="fragment">Einführung</li>
+                    <li class="fragment">Introduction</li>
                     <li class="fragment">Google Chrome Dev Tools</li>
                     <li class="fragment">Google PageSpeed Insights</li>
                     <li class="fragment">WebPageTest</li>
-                    <li class="fragment">Ausblick</li>
+                    <li class="fragment">Future prospects</li>
                 </ul>
             </section>
             <section class="agenda">
-                <h2>Einführung</h2>
+                <h2>Introduction</h2>
                 <ul>
-                    <li class="fragment">Historie</li>
+                    <li class="fragment">History</li>
                     <li class="fragment">Performance by Design</li>
                 </ul>
             </section>
@@ -151,14 +151,14 @@ Esc: Escape from full-screen, or toggle overview
                 <h2>Google Chrome Dev Tools</h2>
                 <ul>
                     <li class="fragment">TTFB</li>
-                    <li class="fragment">Konkatenierung, Spriting, Inlining</li>
+                    <li class="fragment">Concatenation, Spriting, Inlining</li>
                     <li class="fragment hands-on">Hands-on</li>
                 </ul>
             </section>
             <section class="agenda">
                 <h2>Google PageSpeed Insights</h2>
                 <ul>
-                    <li class="fragment">Minifizierung, Komprimierung, Image Optimierung</li>
+                    <li class="fragment">Minification, Compression, Image Optimizing</li>
                     <li class="fragment">Below the Fold / Critical Path</li>
                     <li class="fragment hands-on">Hands-on</li>
                 </ul>
@@ -169,62 +169,62 @@ Esc: Escape from full-screen, or toggle overview
                     <li class="fragment">Browser Caching</li>
                     <li class="fragment">Domain Sharding</li>
                     <li class="fragment">Content Delivery Networks</li>
-                    <li class="fragment">3rd-Party Scripte</li>
+                    <li class="fragment">3rd-Party Scripts</li>
                     <li class="fragment hands-on">Hands-on</li>
                 </ul>
             </section>
             <section class="agenda">
-                <h2>Ausblick</h2>
+                <h2>Future Prospects</h2>
                 <ul>
                     <li class="fragment">HTTP/2</li>
                     <li class="fragment">Single Page Applications (SPAs)</li>
-                    <li class="fragment">Laufzeitperformance (60fps)</li>
+                    <li class="fragment">Runtimeperformance (60fps)</li>
                 </ul>
             </section>
         </section>
         <section>
             <section class="overview">
-                <h2>Einführung</h2>
+                <h2>Introduction</h2>
                 <ul>
-                    <li class="fragment">Historie</li>
+                    <li class="fragment">History</li>
                     <li class="fragment">Performance by Design</li>
                 </ul>
             </section>
             <section>
-                <h2>Historie</h2>
+                <h2>History</h2>
                 <ul>
-                    <li>Einer der ersten Webbrowser: 1990 LMB von Nicola Pellow</li>
+                    <li>One of the first web browsers: 1990 LMB &ndash; Nicola Pellow</li>
                 </ul>
                 <img src="assets/Line_Mode_Browser_Wikipedia.png" width="100%">
             </section>
             <section>
-                <h2>Historie</h2>
+                <h2>History</h2>
                 <ul>
-                    <li>WorldWideWeb/Nexus von Tim Berners-Lee 1991</li>
+                    <li>WorldWideWeb/Nexus &ndash; Tim Berners-Lee 1991</li>
                 </ul>
                 <img src="assets/WorldWideWeb_FSF_GNU.png" width="100%">
             </section>
             <section>
-                <h2>Historie</h2>
+                <h2>History</h2>
                 <ul>
                     <li>HTTP, FTP, NNTP, GOPHER, ...</li>
                 </ul>
                 <img src="assets/WorldWideWeb_FSF_GNU.png" width="100%">
             </section>
             <section>
-                <h2>Heute</h2>
+                <h2>Today</h2>
                 <ul>
-                    <li>HTML, CSS, JS, Icons, Bilder, Filme, ...</li>
+                    <li>HTML, CSS, JS, Icons, Images, Movies, ...</li>
                 </ul>
                 <img src="assets/spiegel-design.png" width="100%" style="border: none">
             </section>
             <section>
                 <h2>Performance by Design</h2>
                 <ul>
-                    <li class="fragment">Schon beim Design an Performance denken</li>
-                    <li class="fragment">Wen will ich erreichen? Und wen nicht?</li>
-                    <li class="fragment">Performance-Anforderungen formulieren</li>
-                    <li class="fragment">Performance-Budget festlegen</li>
+                    <li class="fragment">Think about performance from the beginning!</li>
+                    <li class="fragment">Who is our target audience? And who is not?</li>
+                    <li class="fragment">What are our performance requirements?</li>
+                    <li class="fragment">Fix a performance budget! (&Tilde; 1 sec)</li>
                 </ul>
                 <aside class="notes">
                     Google Chrome Dev Tools: Throttle Regular 3G + DSL 2 MB/s, Screenshot Capture
@@ -238,34 +238,30 @@ Esc: Escape from full-screen, or toggle overview
                 <h2>Google Chrome Dev Tools</h2>
                 <ul>
                     <li class="fragment">TTFB</li>
-                    <li class="fragment">Konkatenierung, Spriting, Inlining</li>
+                    <li class="fragment">Concatenation, Spriting, Inlining</li>
                     <li class="fragment hands-on">Hands-on</li>
                 </ul>
             </section>
             <section>
                 <h2>TTFB</h2>
-                <img src="assets/speedtest.png" width="100%">
-            </section>
-            <section>
-                <h2>TTFB</h2>
                 <ul>
-                    <li class="fragment">Zeit, bis das erste Byte ankommt</li>
+                    <li class="fragment">Time to first byte</li>
                     <li class="fragment">DNS-Lookup (chrome://net-internals/#dns)</li>
-                    <li class="fragment">Connection aufbauen</li>
+                    <li class="fragment">Establish connection</li>
                     <li class="fragment">SSL-Handshake</li>
-                    <li class="fragment">Request senden</li>
-                    <li class="fragment">Warten auf das Backend</li>
-                    <li class="fragment">Response empfangen</li>
+                    <li class="fragment">Send request</li>
+                    <li class="fragment">Wait for backend (hard disc, database, file system)</li>
+                    <li class="fragment">Receive response</li>
                 </ul>
             </section>
             <section>
                 <h2>TTFB</h2>
                 <ul>
-                    <li class="fragment">Backend schneller machen</li>
-                    <li class="fragment">Backend cachen (z.B. Varnish)</li>
-                    <li class="fragment">Entfernung zum User kleiner machen (CDN, SSL-Termination)</li>
-                    <li class="fragment">Chunked encoding nutzen</li>
-                    <li class="fragment">Bestehende Connections nutzen</li>
+                    <li class="fragment">Improve backend performance (memory, cpu, hardware)</li>
+                    <li class="fragment">Backend caching (e.g. Varnish)</li>
+                    <li class="fragment">Reduce geographical distance to user (CDN, SSL termination)</li>
+                    <li class="fragment">Use chunked encoding </li>
+                    <li class="fragment">Use existing connections</li>
                 </ul>
             </section>
             <section>
@@ -293,17 +289,20 @@ Esc: Escape from full-screen, or toggle overview
                 <img src="assets/ttfb.png" width="100%">
             </section>
             <section>
-                <h2>Konkatenierung, Spriting, Inlining</h2>
+                <h2>Concatenating, Spriting, Inlining</h2>
                 <ul>
-                    <li class="fragment">Weniger Requests führen zu geringerer Latenz</li>
-                    <li class="fragment">Ähnliche Typen lassen sich zusammenfassen (JS, CSS)</li>
-                    <li class="fragment">Bilder lassen sich zu Spritemaps oder Fonts zusammenfassen</li>
-                    <li class="fragment">Sofort benötigte Ressourcen lassen sich inlinen</li>
+                    <li class="fragment">Fewer requests <i class="fa fa-arrow-right" aria-hidden="true" style="font-size: .8em"></i> low latency</li>
+                    <li class="fragment">JS- and CCS-files can be combined</li>
+                    <li class="fragment">Images can be combined into spritemaps or fonts</li>
+                    <li class="fragment">Immediately required resources  can be inlined</li>
                     <li class="fragment"><a href="https://www.spiegel.de" target="_blank">Spiegel.de</a></li>
                     <li class="fragment"><a href="https://www.fcstpauli.de" target="_blank">FC St. Pauli</a></li>
-                    <li class="fragment"><a href="https:/www.smashingmagazine.com" target="_blank">Smashing Magazine</a>
-                    </li>
+                    <li class="fragment"><a href="https:/www.smashingmagazine.com" target="_blank">Smashing Magazine</a><br/><br/></li>
+
+                    <li class="fragment"><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:red; font-size:1em"></i> All of this could be obsolete with HTTP/2</li>
+                    <li class="fragment">Check for http/2:<br/><a href="https://tools.keycdn.com/http2-test" target="_blank">https://tools.keycdn.com/http2-test</a></li>
                 </ul>
+
             </section>
             <section class="hands-on">
                 <h2>Hands-on Google Chrome Dev Tools</h2>
@@ -314,18 +313,18 @@ Esc: Escape from full-screen, or toggle overview
             <section class="overview">
                 <h2>Google PageSpeed Insights</h2>
                 <ul>
-                    <li class="fragment">Minifizierung, Komprimierung, Image Optimierung</li>
+                    <li class="fragment">Minification, Compression, Image Optimization</li>
                     <li class="fragment">Below the Fold / Critical Path</li>
                     <li class="fragment hands-on">Hands-on</li>
                 </ul>
             </section>
             <section>
-                <h2>Minifizierung, Komprimierung, Image Optimierung</h2>
+                <h2>Minification, Compression, Image Optimization</h2>
                 <ul>
-                    <li class="fragment">Weniger Daten benötigen geringere Bandbreite</li>
-                    <li class="fragment">CSS, HTML & JS lassen sich reduzieren</li>
-                    <li class="fragment">Textuelle Responses lassen sich komprimieren</li>
-                    <li class="fragment">Bilder lassen sich optimieren</li>
+                    <li class="fragment">Less data needs a lesser amount of bandwidth.</li>
+                    <li class="fragment">CSS, HTML &amp; JS can be reduced.</li>
+                    <li class="fragment">Textual responses can always be compressed.</li>
+                    <li class="fragment">Images can be optimized.</li>
                     <li class="fragment"><a
                             href="https://developers.google.com/speed/pagespeed/insights/?url=www.spiegel.de"
                             target="_blank">Spiegel.de</a></li>
@@ -342,19 +341,17 @@ Esc: Escape from full-screen, or toggle overview
                 <img src="assets/criticalpath.png" width="100%"
                      title="http://calendar.perfplanet.com/2012/deciphering-the-critical-rendering-path">
                 <ul>
-                    <li class="fragment">Bevor der Browser die Seite rendern kann, muss er den DOM und das CSSOM
-                        aufbauen.
+                    <li class="fragment">Before the browser can render the page, he must construct the DOM and the CSSOM.
                     </li>
-                    <li class="fragment">Sowohl das DOM als auch das CSSOM lassen sich durch JS verändern.</li>
-                    <li class="fragment">Daher sollten nicht benötigte Scripte und Stylesheets asynchron geladen
-                        werden.
+                    <li class="fragment">DOM and CSSOM may be modified by JavaScript</li>
+                    <li class="fragment">Therefore, unnecessary scripts and styles should be loaded asnychronically.
                     </li>
                 </ul>
             </section>
             <section>
                 <h2>Below the Fold / Critical Path</h2>
                 <ul>
-                    <li class="fragment">Nur das ausliefern, was initial benötigt wird, den Rest später nachladen!</li>
+                    <li class="fragment">The webserver should only serve the initially needed content. Everything else: later!</li>
                     <li class="fragment"><a
                             href="https://developers.google.com/speed/pagespeed/insights/?url=www.spiegel.de"
                             target="_blank">Spiegel.de</a></li>
@@ -390,17 +387,17 @@ Esc: Escape from full-screen, or toggle overview
             <section>
                 <h2>Browser Caching</h2>
                 <ul>
-                    <li class="fragment">Weniger Requests!</li>
-                    <li class="fragment">Weniger Traffic!</li>
-                    <li class="fragment">Weniger Betriebskosten!</li>
+                    <li class="fragment">Fewer Requests!</li>
+                    <li class="fragment">Less Traffic!</li>
+                    <li class="fragment">Reduced costs!</li>
                 </ul>
             </section>
             <section>
                 <h2>Browser Caching</h2>
                 <ul>
-                    <li class="fragment">Strategie 1: Requests vermeiden!</li>
+                    <li class="fragment">Strategy 1: Avoid requests!</li>
                     <li class="fragment">
-                        Mit URL Fingerprinting
+                        With URL fingerprinting
                         <pre><code contenteditable data-trim class="nohighlight">
                             http://static.bla.de/js/main.min.28101047.js
                         </code></pre>
@@ -410,7 +407,7 @@ expires: Wed, 02 Nov 2016 15:49:00 GMT
                         </code></pre>
                     </li>
                     <li class="fragment">
-                        Ohne URL Fingerprinting
+                        Without URL fingerprinting
                         <pre><code contenteditable data-trim class="nohighlight">
 http://bla.de/app/config.json
 http://bla.de/views/footer.html
@@ -420,13 +417,13 @@ cache-control: public, max-age=86400
 expires: Wed, 11 Nov 2015 14:55:34 GMT
                         </code></pre>
                     </li>
-                    <li class="fragment">Alle statischen Ressourcen</li>
+                    <li class="fragment">Should be used for all static esources.</li>
                 </ul>
             </section>
             <section>
                 <h2>Browser Caching</h2>
                 <ul>
-                    <li class="fragment">Strategie 2: Traffic vermeiden!</li>
+                    <li class="fragment">Strategy 2: avoid traffic!</li>
                     <li class="fragment">
                         Response-Headers:
                         <pre><code contenteditable data-trim class="http">
@@ -447,8 +444,8 @@ If-None-Match: "0rrdr4ruwpoEkjfZ2WTN0BrU83U="
 HTTP/1.1 304 Not Modified
                         </code></pre>
                     </li>
-                    <li class="fragment">Alle dynamischen Ressourcen</li>
-                    <li class="fragment">Beispiele:
+                    <li class="fragment">All dynamischc resources</li>
+                    <li class="fragment">Example:
                         <a href="http://www.webpagetest.org/result/151104_Q6_1987/" target="_blank">Spiegel</a>
                     </li>
                 </ul>
@@ -459,11 +456,11 @@ HTTP/1.1 304 Not Modified
             <section>
                 <h2>Domain Sharding</h2>
                 <ul>
-                    <li class="fragment">Bandbreite ausnutzen!</li>
+                    <li class="fragment">Use the whole bandwidth!</li>
                     <li class="fragment">Trade-Off: <br/> DNS Lookup, TCP Connect, <br/> SSL Handshake, Slow-Start</li>
-                    <li class="fragment">Keine Cookies</li>
-                    <li class="fragment">Alle statischen Ressourcen</li>
-                    <li class="fragment">Beispiele:
+                    <li class="fragment">No Cookies!</li>
+                    <li class="fragment">For all static resources</li>
+                    <li class="fragment">Examples:
                         <a href="http://www.webpagetest.org/result/151104_Q6_1987/" target="_blank">Spiegel</a>,
                         <a href="http://www.webpagetest.org/result/151104_XH_195K/" target="_blank">St. Pauli</a>,
                         <a href="http://www.webpagetest.org/result/151104_8C_19NZ/" target="_blank">HSV News</a>,
@@ -471,22 +468,23 @@ HTTP/1.1 304 Not Modified
                     </li>
                 </ul>
                 <aside class="notes">
-                    WebPageTest: Domains und Content Breakdown (Connection View) anschauen
+                    WebPageTest: Domains and Content Breakdown (Connection View)
                 </aside>
             </section>
             <section>
                 <h2>Content Delivery Networks</h2>
                 <ul>
-                    <li class="fragment">Weniger Latenz!</li>
-                    <li class="fragment">Sinnvoll nur bei über-nationalen Sites</li>
+                    <li class="fragment">Less latency!</li>
+                    <li class="fragment">Makes sense for sites with a global audience.</li>
+                    <li class="fragment">A light-beam needs &Tilde;70ms to pass the distance between NYC and Sigapore.</li>
                 </ul>
             </section>
             <section>
-                <h2>3rd-Party Scripte</h2>
+                <h2>3rd-Party Scripts</h2>
                 <ul>
-                    <li class="fragment">Mehr Risiko!</li>
-                    <li class="fragment">async setzen</li>
-                    <li class="fragment">SPOF-Tests</li>
+                    <li class="fragment">High risk!!!</li>
+                    <li class="fragment">Load asynchronically!</li>
+                    <li class="fragment">Perform SPOF-tests</li>
                 </ul>
             </section>
             <section class="hands-on">
@@ -496,11 +494,10 @@ HTTP/1.1 304 Not Modified
         </section>
         <section>
             <section class="outlook">
-                <h2>Ausblick</h2>
+                <h2>Future Prospects</h2>
                 <ul>
                     <li class="fragment">HTTP/2</li>
                     <li class="fragment">Single Page Applications (SPAs)</li>
-                    <li class="fragment">Laufzeitperformance (60fps)</li>
                 </ul>
             </section>
             <section>
@@ -536,18 +533,6 @@ HTTP/1.1 304 Not Modified
                     <li class="fragment">Skeletons</li>
                 </ul>
             </section>
-            <section>
-                <h2>Laufzeit&shy;performance (60 fps)</h2>
-                <ul>
-                    <li class="fragment">Die meisten Geräte rendern mit 60fps</li>
-                    <li class="fragment">Zeit für Berechnungen sind dann nur ca. 10ms</li>
-                    <li class="fragment">Benutze Chrome DevTools um Bottlenecks zu erkennen</li>
-                    <li class="fragment"><a href="http://jankfree.org/" target="_blank">JankFree.org</a></li>
-                    <li class="fragment"><a href="http://pitchfork.com/features/cover-story/reader/daft-punk/"
-                                            target="_blank">Daft Punk</a></li>
-                </ul>
-            </section>
-
             <section class="qna">
                 <h2>Q&amp;A</h2>
             </section>
