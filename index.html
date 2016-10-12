@@ -22,9 +22,9 @@ Esc: Escape from full-screen, or toggle overview
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" media="all" href="bower_components/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" media="all" href="bower_components/reveal.js/css/reveal.css">
 
-    <link rel="stylesheet" media="all" href="bower_components/reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" media="all" href="bower_components/reveal.js/css/theme/beige.css" id="theme">
     <link rel="stylesheet" media="all" href="bower_components/reveal.js/lib/css/fullscreen-img.css" />
     <link rel="shortcut icon" href="assets/brand/favicon.png">
 
@@ -118,10 +118,13 @@ Esc: Escape from full-screen, or toggle overview
 
             <p style="margin-top:4em">
                 <a href="mailto:jan.weinschenker@holisticon.de">Jan Weinschenker</a><br/>
-                <a href="http://www.holisticon.de">http://www.holisticon.de</a><br/><br/>
+                <a href="http://www.holisticon.de">www.holisticon.de</a><br/><br/>
                 <small>jan.weinschenker@holisticon.de<br/><br/>@janweinschenker</small>
             </p>
 
+        </section>
+        <section data-background="#ffffff">
+            <img src="assets/logo_2016.png" width="100%" style="border: 0; box-shadow: none"/>
         </section>
         <section>
             <img src="assets/meetup.png" width="60%" style="border:none; background:none; -webkit-box-shadow: none;">
@@ -339,7 +342,7 @@ Esc: Escape from full-screen, or toggle overview
                 <img src="assets/criticalpath.png" width="100%"
                      title="http://calendar.perfplanet.com/2012/deciphering-the-critical-rendering-path">
                 <ul>
-                    <li class="fragment">Before the browser can render the page, he must construct the DOM and the CSSOM.
+                    <li class="fragment">Before the browser can render the page, it must construct the DOM and the CSSOM.
                     </li>
                     <li class="fragment">DOM and CSSOM may be modified by JavaScript</li>
                     <li class="fragment">Therefore, unnecessary scripts and styles should be loaded asnychronically.
@@ -495,51 +498,37 @@ HTTP/1.1 304 Not Modified
                 <h2>Future Prospects</h2>
                 <ul>
                     <li class="fragment">HTTP/2</li>
-                    <li class="fragment">Single Page Applications (SPAs)</li>
                 </ul>
             </section>
             <section>
                 <h2>HTTP/2</h2>
                 <ul>
-                    <li class="fragment">Multiplexed Streams: Die Verbindung wird für verschiedene Inhalte genutzt</li>
-                    <li class="fragment">Eine einzelne Verbindung benötigt nur ein Handshake (SSL/TLS)</li>
-                    <li class="fragment">Domain Sharding, Concatenation, Image Spriting etc. wird nicht mehr
-                        benötigt
+                    <li class="fragment">Multiplexed Streams: Connection sharing </li>
+                    <li class="fragment">Only one handshake (SSL/TLS) for every connection</li>
+                    <li class="fragment">Domain Sharding, Concatenation, Image Spriting etc. become obsolete
                     </li>
-                    <li class="fragment">Server Push: Proaktiv Assets (wie JS and CSS) an den Browser senden</li>
-                    <li class="fragment">Header Compression: Alle Header werden in einem Block als komprimierte Einheit
-                        verschickt
+                    <li class="fragment">Server Push: send assets (wie JS and CSS) proactively</li>
+                    <li class="fragment">Header Compression: send protocol headers as one compressed block
                     </li>
-                    <li class="fragment">Binary anstatt textuelles Format: weniger Code, leichteres Parsing auf dem
-                        Server
-                    </li>
-                    <li class="fragment">Beispiel: <a href="http://http2.golang.org/gophertiles?latency=30" target="_blank">A grid of
+                    <li class="fragment">Binary protocol: less code, easier parsing</li>
+                    <li class="fragment">Example: <a href="http://http2.golang.org/gophertiles?latency=30" target="_blank">A grid of
                         180 tiled images</a>
                     </li>
                     </li>
                 </ul>
             </section>
-            <section>
-                <h2>Single Page Applications</h2>
-                <ul>
-                    <li class="fragment">Weniger Traffic</li>
-                    <li class="fragment">Bessere Usability</li>
-                    <li class="fragment">Initialier Download oft schnell (TTFB) aber Rendering erst nach den ersten
-                        AJAX-Requests
-                    </li>
-                    <li class="fragment">Pre-Rendering auf dem Server</li>
-                    <li class="fragment">Skeletons</li>
-                </ul>
-            </section>
             <section class="qna">
                 <h2>Q&amp;A</h2>
+                <!--
+                <p><i class="fa fa-question-circle" aria-hidden="true" style="font-size: 5em"/> </p>
+                -->
             </section>
         </section>
     </div>
 </div>
 
 <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
-<script src="bower_components/reveal.js/js/reveal.min.js"></script>
+<script src="bower_components/reveal.js/js/reveal.js"></script>
 <script>
     // Configure Reveal
     // Full list of configuration options available here:
