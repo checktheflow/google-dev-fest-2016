@@ -24,7 +24,8 @@ Esc: Escape from full-screen, or toggle overview
 
     <link rel="stylesheet" media="all" href="bower_components/reveal.js/css/reveal.min.css">
 
-    <link rel="stylesheet" media="all" href="bower_components/reveal.js/css/theme/beige.css" id="theme">
+    <link rel="stylesheet" media="all" href="bower_components/reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" media="all" href="bower_components/reveal.js/lib/css/fullscreen-img.css" />
     <link rel="shortcut icon" href="assets/brand/favicon.png">
 
     <!-- For syntax highlighting -->
@@ -42,11 +43,6 @@ Esc: Escape from full-screen, or toggle overview
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
-        /*
-        .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-            font-family: "Mukta-Regular";
-        }
-*/
         .reveal {
             font-family: "Mukta-Extralight";
         }
@@ -120,9 +116,10 @@ Esc: Escape from full-screen, or toggle overview
             <h2>Hands-on Web Performance Analysis</h2>
             <h5>with Chrome Dev Tools, Google PageSpeed Insights and WebPagetest</h5>
 
-            <p>
-                <a href="mailto:jan.weinschenker@holisticon.de">Jan Weinschenker</a> |
-                <a href="http://www.holisticon.de">http://www.holisticon.de</a>
+            <p style="margin-top:4em">
+                <a href="mailto:jan.weinschenker@holisticon.de">Jan Weinschenker</a><br/>
+                <a href="http://www.holisticon.de">http://www.holisticon.de</a><br/><br/>
+                <small>jan.weinschenker@holisticon.de<br/><br/>@janweinschenker</small>
             </p>
 
         </section>
@@ -220,6 +217,7 @@ Esc: Escape from full-screen, or toggle overview
             </section>
             <section>
                 <h2>Performance by Design</h2>
+                <img src="assets/Performance_Budget.png" class="stretch" style="border:none;" />
                 <ul>
                     <li class="fragment">Think about performance from the beginning!</li>
                     <li class="fragment">Who is our target audience? And who is not?</li>
@@ -444,7 +442,7 @@ If-None-Match: "0rrdr4ruwpoEkjfZ2WTN0BrU83U="
 HTTP/1.1 304 Not Modified
                         </code></pre>
                     </li>
-                    <li class="fragment">All dynamischc resources</li>
+                    <li class="fragment">All dynamic resources</li>
                     <li class="fragment">Example:
                         <a href="http://www.webpagetest.org/result/151104_Q6_1987/" target="_blank">Spiegel</a>
                     </li>
@@ -476,7 +474,7 @@ HTTP/1.1 304 Not Modified
                 <ul>
                     <li class="fragment">Less latency!</li>
                     <li class="fragment">Makes sense for sites with a global audience.</li>
-                    <li class="fragment">A light-beam needs &Tilde;70ms to pass the distance between NYC and Sigapore.</li>
+                    <li class="fragment">A light-beam needs &Tilde;50ms to pass the flight distance between NYC and Singapore (15,339km).</li>
                 </ul>
             </section>
             <section>
@@ -641,6 +639,9 @@ HTTP/1.1 304 Not Modified
                 return !!document.body.classList;
             }
             },
+            {
+                src:'bower_components/reveal.js/lib/js/fullscreen-img.js'
+            }
             //{ src: 'bower_components/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
             //{ src: 'bower_components/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 
